@@ -5,9 +5,12 @@ let issues = require('../issues');
 // CREATE
 router.post('/', (req, res) => {
   const newIssue = req.body;
-  issues.push(newIssue);
-  console.log('Created Issue:', newIssue);
-  res.status(201).send(newIssue);
+  // Generate new ID based on existing issues
+  const newId = issues.length > 0 ? Math.max(...issues.map(issue => issue.id)) + 1 : 1;
+  const issueWithId = { id: newId, ...newIssue };
+  issues.push(issueWithId);
+  console.log('Created Issue:', issueWithId);
+  res.status(201).send(issueWithId);
 });
 
 // READ
