@@ -1,4 +1,4 @@
-# Sitemate-Full-Stack-Engineer
+# Sitemate Coding Test: Full Stack Engineer Role
 
 This is a simple Issue Tracker app built using Node.js with Express on the backend and React on the frontend. 
 The app allows you to create, read, update, and delete issues. 
